@@ -1,0 +1,31 @@
+group 'esafirm'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+kotlin.experimental.coroutines 'enable'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16'
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.16'
+
+    /* RxJava */
+    compile 'io.reactivex.rxjava2:rxjava:2.11'
+}
